@@ -23,15 +23,15 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 
 # winbuild dependencies
 win32 {
-BOOST_LIB_SUFFIX=-mgw73-mt-s-1_58
+BOOST_LIB_SUFFIX=-mgw53-mt-s-1_58
 BOOST_INCLUDE_PATH=C:/deps/boost_1_58_0
 BOOST_LIB_PATH=C:/deps/boost_1_58_0/stage/lib
 BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
 BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
 OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.2s/include
 OPENSSL_LIB_PATH=C:/deps/openssl-1.0.2s
-MINIUPNPC_INCLUDE_PATH=C:/deps/miniupnpc-1.9
-MINIUPNPC_LIB_PATH=C:/deps/miniupnpc-1.9
+MINIUPNPC_INCLUDE_PATH=C:/deps/miniupnpc-1.6
+MINIUPNPC_LIB_PATH=C:/deps/miniupnpc-1.6
 QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.4
 QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.4/.libs
 GMP_INCLUDE_PATH=C:/deps/gmp-6.0.0
@@ -366,7 +366,7 @@ OTHER_FILES += \
 # platform specific defaults, if not overridden on command line
 isEmpty(BOOST_LIB_SUFFIX) {
     macx:BOOST_LIB_SUFFIX = -mt
-    windows:BOOST_LIB_SUFFIX = -mgw73-mt-s-1_58
+    windows:BOOST_LIB_SUFFIX = -mgw53-mt-s-1_58
 }
 
 isEmpty(BOOST_THREAD_LIB_SUFFIX) {
