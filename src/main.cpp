@@ -2852,6 +2852,9 @@ string GetWarnings(string strFor)
     if (GetBoolArg("-testsafemode"))
         strRPC = "test";
 
+    if (!CLIENT_VERSION_IS_RELEASE)
+        strStatusBar = _("This is a pre-release test build - use at your own risk - do not use for mining or merchant applications");
+
     // ppcoin: wallet lock warning for minting
     if (strMintWarning != "")
     {
@@ -2868,11 +2871,11 @@ string GetWarnings(string strFor)
 
     // ppcoin: should not enter safe mode for longer invalid chain
     // ppcoin: if sync-checkpoint is too old do not enter safe mode
-    if (Checkpoints::IsSyncCheckpointTooOld(60 * 60 * 24 * 365) && !fTestNet && !IsInitialBlockDownload())
-    {
-        nPriority = 100;
-        strStatusBar = "WARNING: Checkpoint is too old. Wait for block chain to download, or notify developers.";
-    }
+    //if (Checkpoints::IsSyncCheckpointTooOld(60 * 60 * 24 * 365) && !fTestNet && !IsInitialBlockDownload())
+    //{
+    //    nPriority = 100;
+    //    strStatusBar = "WARNING: Checkpoint is too old. Wait for block chain to download, or notify developers.";
+    //}
 
     // ppcoin: if detected invalid checkpoint enter safe mode
     if (Checkpoints::hashInvalidCheckpoint != 0)
@@ -4408,7 +4411,7 @@ void NoblecoinMiner(CWallet *pwallet, bool fProofOfStake)
         while (vNodes.empty() || IsInitialBlockDownload() || pwallet->IsLocked())
         {
             nLastCoinStakeSearchInterval = 0;
-            Sleep(1000);
+            MilliSleep(1000);
             if (fShutdown)
                 return;
             if (!fGenerateNoblecoin && !fProofOfStake)
@@ -4443,7 +4446,7 @@ void NoblecoinMiner(CWallet *pwallet, bool fProofOfStake)
                 CheckWork(pblock.get(), *pwalletMain, reservekey);
                 SetThreadPriority(THREAD_PRIORITY_LOWEST);
             }
-            Sleep(500);
+            MilliSleep(500);
             continue;
         }
 
@@ -4601,7 +4604,7 @@ void GenerateNoblecoin(bool fGenerate, CWallet* pwallet)
         {
             if (!NewThread(ThreadNoblecoinMiner, pwallet))
                 printf("Error: NewThread(ThreadNoblecoinMiner) failed\n");
-            Sleep(10);
+            MilliSleep(10);
         }
     }
 }
