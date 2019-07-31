@@ -1,8 +1,8 @@
 
-Copyright (c) 2014 Noblecoin Developers
+Copyright (c) 2014-2019 Noblecoin Developers
 
 
-Noblecoin 2.0.4.1
+Noblecoin 2.0.4.2
 
 Copyright (c) 2014 Noblecoin Developers
 Copyright (c) 2013 NovaCoin Developers
@@ -24,14 +24,13 @@ help further advance the field of crypto-currency.
 Setup
 -----
 Unpack the files into a directory and run:
- bin/32/noblecoind (headless, 32-bit)
- bin/64/noblecoind (headless, 64-bit)
+noblecoind (headless, 32-bit)
 
 The software automatically finds other nodes to connect to.  You can
 enable Universal Plug and Play (UPnP) with your router/firewall
 or forward port 
 
-23489 (TCP) to your computer so you can receive
+55882 (TCP) to your computer so you can receive
 incoming connections.  Noblecoin works without incoming connections,
 but allowing incoming connections helps the Noblecoin network.
 
