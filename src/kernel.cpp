@@ -38,6 +38,9 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
 	( 1200000,	0x0a4d12a2)
 	( 1300000,	0xf4e3dc0a)
 	( 1400000,	0xc27268cd)
+	( 1500000,	0x97b0fac7)
+	( 1600000,	0xda35ade6)
+	( 1610644,	0x53ebda68)
 ;
 
 // Hard checkpoints of stake modifiers to ensure they are deterministic (TestNet)

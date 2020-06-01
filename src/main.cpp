@@ -932,11 +932,19 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 
 int64 GetProofOfWorkReward(int nBits, int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 1000 * COIN;
-    
+    int64 nSubsidy = 1* COIN;
+
     if(nHeight <= 11)
     {
         nSubsidy = 200000000 * COIN;
+    }
+    else if (nHeight < END_NOBL_PUREPOS_HEIGHT) // Transition into permanent Hybrid wallet
+    {
+        nSubsidy = 1000 * COIN;
+    }
+    else 
+    {
+        nSubsidy = 5 * COIN;
     }
 
     return nSubsidy + nFees;
