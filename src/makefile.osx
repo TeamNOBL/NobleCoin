@@ -6,6 +6,7 @@
 # Mac OS X makefile for bitcoin
 # Originally by Laszlo Hanyecz (solar@heliacal.net)
 
+CC=llvm-gcc
 CXX=llvm-g++
 DEPSDIR=/opt/local
 
@@ -76,6 +77,7 @@ OBJS= \
     obj/netbase.o \
     obj/addrman.o \
     obj/crypter.o \
+    obj/base58.o \
     obj/key.o \
     obj/db.o \
     obj/init.o \
@@ -125,8 +127,16 @@ endif
 
 all: noblecoind
 
-test check: test_noblecoin FORCE
-	./test_noblecoin
+#
+# LevelDB support
+#
+LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
+DEFS += $(addprefix -I,$(CURDIR)/leveldb/include) -DUSE_LEVELDB
+DEFS += $(addprefix -I,$(CURDIR)/leveldb/helpers)
+OBJS += obj/txdb-leveldb.o
+leveldb/libleveldb.a:
+@echo "Building LevelDB ..."; cd leveldb; make libleveldb.a libmemenv.a; cd ..
+obj/txdb-leveldb.o: leveldb/libleveldb.a
 
 # auto-generated dependencies:
 -include obj/*.P

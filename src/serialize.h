@@ -371,6 +371,7 @@ public:
 template<typename I>
 CVarInt<I> WrapVarInt(I& n) { return CVarInt<I>(n); }
 
+
 //
 // Forward declarations
 //
