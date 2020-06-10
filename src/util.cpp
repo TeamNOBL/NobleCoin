@@ -603,7 +603,7 @@ std::string GetArg(const std::string& strArg, const std::string& strDefault)
 }
 
 //if string strArg exists in mapArgs, return the corresponding value (int64), otherwise return strDefault (string) (int64)
-int64 GetArg(const std::string& strArg, int64 nDefault)
+int64_t GetArg(const std::string& strArg, int64_t nDefault)
 {
     if (mapArgs.count(strArg))
         return atoi64(mapArgs[strArg]);
