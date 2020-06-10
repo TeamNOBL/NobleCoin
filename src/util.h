@@ -409,7 +409,7 @@ std::string GetArg(const std::string& strArg, const std::string& strDefault);
  * @param default (e.g. 1)
  * @return command-line argument (0 if invalid number) or default value
  */
-int64_t GetArg(const std::string& strArg, int64 nDefault);
+int64_t GetArg(const std::string& strArg, int64_t nDefault);
 
 /**
  * Return 32-bit integer argument or default value
