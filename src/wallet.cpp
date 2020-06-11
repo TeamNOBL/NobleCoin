@@ -1887,7 +1887,7 @@ bool CWallet::NewKeyPool()
         if (IsLocked())
             return false;
 
-        int64 nKeys = max(GetArg("-keypool", 100), (int64)0);
+        int64 nKeys = max(GetArg("-keypool", 100), (int64_t)0);
         for (int i = 0; i < nKeys; i++)
         {
             int64 nIndex = i+1;
@@ -1910,7 +1910,7 @@ bool CWallet::TopUpKeyPool()
         CWalletDB walletdb(strWalletFile);
 
         // Top up key pool
-        unsigned int nTargetSize = max(GetArg("-keypool", 100), 0LL);
+        unsigned int nTargetSize = max(GetArg("-keypool", 100), (int64_t)0);
         while (setKeyPool.size() < (nTargetSize + 1))
         {
             int64 nEnd = 1;
