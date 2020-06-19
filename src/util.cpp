@@ -1319,7 +1319,8 @@ void AddTimeData(const CNetAddr& ip, int64 nTime)
     }
 }
 
-
+uint32_t insecure_rand_Rz = 11;
+uint32_t insecure_rand_Rw = 11;
 
 
 
