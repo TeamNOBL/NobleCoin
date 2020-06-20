@@ -971,6 +971,8 @@ void static PruneOrphanBlocks()
     if (mapOrphanBlocksByPrev.size() <= (size_t)std::max((int64)0, GetArg("-maxorphanblocks", DEFAULT_MAX_ORPHAN_BLOCKS)))
         return;
 
+    seed_insecure_rand();
+
     // Pick a random orphan block.
     int pos = insecure_rand() % mapOrphanBlocksByPrev.size();
     std::multimap<uint256, CBlock*>::iterator it = mapOrphanBlocksByPrev.begin();

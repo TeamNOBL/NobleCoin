@@ -463,6 +463,13 @@ static inline uint32_t insecure_rand(void)
     return (insecure_rand_Rw << 16) + insecure_rand_Rz;
 }
 
+/**
+ * Seed insecure_rand using the random pool.
+ * @param Deterministic Use a determinstic seed
+ */
+void seed_insecure_rand(bool fDeterministic=false);
+
+
 /** Median filter over a stream of values.
  * Returns the median of the last N numbers
  */
