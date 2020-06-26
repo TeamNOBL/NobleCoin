@@ -13,6 +13,7 @@ Version 2.1.1.0 is fully compatible with v2.1.0.0. Update is not necesssary.
 Because of switch to levelDB and fast-startup, the local database needs to recreated, 
 either from bootstrap or ReSync.
 
+
 ### Version 2.1.0.0: Fork @ Height 1610644
 Fork to transition to permanent hybrid wallet with POS V2 and POW (M7M) 
 A reload of the blockchain is not necessary.
