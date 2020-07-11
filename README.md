@@ -4,7 +4,7 @@
 Noblecoin is a Hybrid-based cryptocurrency. Pos VII and POW M7M 
 
 
-### Version 2.1.1.1: Small Client Update
+### Version 2.1.1.1: Small Client Update (Needed for Linux Compilation)
 Linux Compile Fix
 
 OpenSSL 1.1.1 Compatiblilty
