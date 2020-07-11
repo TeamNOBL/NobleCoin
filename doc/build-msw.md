@@ -81,12 +81,12 @@ Same for G++ -v and Qmake -v
 
 ### 2.1 OpenSSL 
 
-https://www.openssl.org/source/openssl-1.0.2s.tar.gz
+https://www.openssl.org/source/openssl-1.1.1g.tar.gz
 
 From an MinGW shell (C:\MinGW\msys\1.0\msys.bat), unpack the source archive to C:\deps, then configure and make:
 
 ```
-cd c/deps/openssl-1.0.2s
+cd c/deps/openssl-1.1.1g
 Configure mingw
 make
 ```
@@ -106,14 +106,15 @@ make
 
 ### 2.3 Boost
 
-http://sourceforge.net/projects/boost/files/boost/1.58.0/
+http://sourceforge.net/projects/boost/files/boost/1.66.0/
 
 Download either the zip or the 7z archive, unpack Boost to C:\deps, then bootstrap and compile from a Windows command prompt:
 
 ```
-cd C:\deps\boost_1_58_0
-bootstrap.bat mingw
-b2 --build-type=complete --with-chrono --with-filesystem --with-program_options --with-system --with-thread toolset=gcc stage
+cd C:\deps\boost_1_66_0\tools\build\
+bootstrap.bat gcc
+cd C:\deps\boost_1_66_0\
+tools\build\b2 toolset=gcc --build-type=complete stage --with-filesystem --with-system --with-program_options --with-thread --with-chrono
 ```
 
 This will compile the required Boost libraries and put them into the stage folder (C:\deps\boost_1_58_0\stage).
