@@ -1,4 +1,5 @@
 Copyright (c) PeerUnity Developers
+
 Copyright (c) 2014-2021 Noblecoin Developers
 
 Distributed under the MIT/X11 software license, see the accompanying
